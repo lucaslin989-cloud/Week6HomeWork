@@ -45,8 +45,8 @@ bool Vial::transfer(Vial& destination){
         cout<<"Source vial is empty. "<<endl;
         return false;
     }
-    if(filled==4){
-        cout<<"Source vial is filled. "<<endl;
+    if(destination.filled==4){
+        cout<<"Destination vial is filled. "<<endl;
         return false;
     }
     char sourceTop=contents[filled-1];

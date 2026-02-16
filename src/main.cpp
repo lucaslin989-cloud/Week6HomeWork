@@ -31,14 +31,32 @@ int main(){
         if (value[randomValue]=='-') continue;
         if (!vial[randomVial].add(value[randomValue])) continue;
         value[randomValue] = '-';
-        place++;
-        
+        place++;      
     }
-for (int i = 0; i < 5; i++) {
-    cout << (i+1) << " ";
-    vial[i].display();
-    cout << endl;
-}
-
+        for (int i = 0; i < 5; i++) {
+            cout << (i+1) << " ";
+            vial[i].display();
+            cout << endl;
+    }
+    
+    while(true){
+        bool allComplete={vial[0].isComplete()&&vial[1].isComplete()&&vial[2].isComplete()&&vial[3].isComplete()&&vial[4].isComplete()};
+        if (allComplete) break;
+        cout<<"Source, Destination: ";
+        cin>>source;cin>>destination;
+        if (source<0 || source>5 ||destination<0||destination>5){
+            cout<<"Enter number 1-5 \n";continue;
+        }else if (source==destination){
+            cout<<"Source and Continue couldn't be same.\n";continue;
+        }
+        if (vial[source-1].transfer(vial[destination-1]))moves++;
+        cout<<"Moves taken: "<<moves<<endl;
+        for (int i = 0; i < 5; i++) {
+            cout << (i+1) << " ";
+            vial[i].display();
+            cout << endl;
+        }
+    }
+    cout<<"You win";
     return 0;
 }
