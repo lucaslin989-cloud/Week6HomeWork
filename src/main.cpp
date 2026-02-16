@@ -3,7 +3,6 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
-#include <list>
 
 using namespace std;
 
@@ -44,7 +43,7 @@ int main(){
         if (allComplete) break;
         cout<<"Source, Destination: ";
         cin>>source;cin>>destination;
-        if (source<0 || source>5 ||destination<0||destination>5){
+        if (source<1 || source>5 ||destination<1||destination>5){
             cout<<"Enter number 1-5 \n";continue;
         }else if (source==destination){
             cout<<"Source and Continue couldn't be same.\n";continue;
